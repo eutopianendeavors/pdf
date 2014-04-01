@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>Document sans titre</title>
+
+</head>
+
+<body>
+
+<div class="container">
+  <div class="header"><a href="#"><img src="stbr.gif" alt="Insérer le logo ici" name="Insert_logo" width="20%" height="90" id="Insert_logo" style="background-color: #8090AB; display:block;" /></a> 
+    <!-- end .header --></div>
+  <div class="sidebar1">
+    <ul class="nav">
+      <li><a href="#">Lien un</a></li>
+      <li><a href="#">Lien deux</a></li>
+      <li><a href="#">Lien trois</a></li>
+      <li><a href="#">Lien quatre</a></li>
+    </ul>
+    <p> Les liens ci-dessus illustrent une structure de navigation de base à l'aide d'une liste simple dont le style est défini par CSS. Vous pouvez l'utiliser comme point de départ et modifier les propriétés afin de définir l'apparence de votre choix. Si vous avez besoin de menus de survol, créez-les à l'aide d'un menu Spry, d'un widget de menu téléchargé sur Adobe Exchange ou de diverses solutions JavaScript ou CSS.</p>
+    <p>Si vous voulez placer la navigation en haut, déplacez l'élément ul.nav en haut de la page et recréez la mise en forme.</p>
+    <!-- end .sidebar1 --></div>
+  <div class="content">
+    <h1>Instructions</h1>
+    <p>Notez que le code CSS de ces mises en forme contient une grande quantité de commentaires. Si vous travaillez principalement en mode Création, jetez un coup d'œil au code afin d'obtenir des conseils sur l'utilisation du code CSS pour les mises en forme liquides. Vous pouvez supprimer ces commentaires avant de lancer votre site. Pour en savoir plus sur les techniques utilisées dans ces mises en forme CSS, consultez l'article suivant sur le centre pour développeurs Adobe : <a href="http://www.adobe.com/go/adc_css_layouts">http://www.adobe.com/go/adc_css_layouts</a>.</p>
+    <h2>Méthode d'effacement</h2>
+    <p>Comme toutes les colonnes sont flottantes, cette mise en page utilise une déclaration clear:both dans la règle .footer.  Cette technique d'effacement force le .container à comprendre où les colonnes se terminent, de façon à afficher les bordures ou les couleurs d'arrière-plan que vous appliquez au .container. Si votre conception exige la suppression de l'élément .footer du .container, vous devrez utiliser une méthode d'effacement différente. La plus fiable consiste à ajouter un élément &lt;br class=&quot;clearfloat&quot; /&gt; ou &lt;div  class=&quot;clearfloat&quot;&gt;&lt;/div&gt; après la dernière colonne flottante (mais avant la fermeture du .container). L'effet d'effacement résultant sera identique.</p>
+    <h3>Remplacement du logo</h3>
+    <p>Dans la zone .header, un espace réservé pour image a été utilisé à l'endroit où vous souhaiterez probablement placer un logo. Il est conseillé de supprimer l'espace réservé et de le remplacer par votre logo lié. </p>
+    <p> Notez que si vous utilisez l'inspecteur Propriétés pour accéder à l'image de votre logo à l'aide de la zone SRC (au lieu de supprimer l'espace réservé puis de le remplacer), vous devez veiller à supprimer les propriétés intégrées d'arrière-plan et d'affichage. Ces styles intégrés servent uniquement à permettre l'affichage de l'espace réservé du logo dans des navigateurs à des fins de démonstration. </p>
+    <p>Pour supprimer les styles intégrés, assurez-vous que le panneau Styles CSS est bien en mode Actuel. Sélectionnez l'image puis, dans le volet Propriétés du panneau Styles CSS, cliquez à l'aide du bouton droit puis supprimez les propriétés d'affichage et d'arrière-plan. Bien entendu, vous pouvez toujours accéder directement au code et y supprimer les styles intégrés depuis l'image ou l'espace réservé.</p>
+    <h4>Commentaires conditionnels d'Internet Explorer</h4>
+    <p>Ces mises en page liquides contiennent un commentaire conditionnel d'Internet Explorer afin de corriger deux problèmes. </p>
+    <ol>
+      <li>Les navigateurs n'arrondissent pas les tailles de divs de façon cohérente dans les mises en page basées sur des pourcentage. Si le navigateur doit rendre un nombre tel que 144,5px ou 564,5px, il devra l'arrondir à l'entier le plus proche. Safari et Opera arrondissent vers le bas, Internet Explorer vers le haut, et Firefox arrondit une colonne vers le haut et une vers le bas, de façon à remplir entièrement le conteneur. Ces problèmes d'arrondi peuvent entraîner des incohérences dans certaines mises en page. Cet IECC prévoit une marge négative de 1px afin de corriger le problème dans IE. Vous pouvez le déplacer dans n'importe quelle colonne (à gauche comme à droite) en fonction de vos besoins de mise en page.</li>
+      <li>La propriété de zoom a été ajoutée à l'ancre dans la liste de navigation, car dans certains cas, des espaces blancs supplémentaires seront rendus dans IE6 et IE7. Le zoom attribue à IE sa propriété hasLayout prioritaire pour corriger ce problème.</li>
+    </ol>
+    <h4>Arrière-plans</h4>
+    <p>Par nature, la couleur d'arrière-plan d'une div ne s'affiche que pour la longueur du contenu. Dès lors, si vous utilisez une couleur d'arrière-plan ou une bordure pour créer l'apparence d'une colonne latérale, elle ne s'étendra pas jusqu'au pied de page, mais s'arrêtera à l'endroit où le contenu se termine. Si la div .content doit toujours contenir davantage de contenu, vous pouvez placer une bordure sur la div .content afin de la séparer de la colonne.</p>
+    <!-- end .content --></div>
+  <div class="footer">
+    <p>Ce .footer contient la déclaration position:relative, de façon à attribuer hasLayout à Internet Explorer 6 pour le .footer et forcer son effacement correct. Si la compatibilité avec IE6 n'est pas nécessaire, vous pouvez le supprimer.</p>
+    <!-- end .footer --></div>
+  <!-- end .container --></div>
+</body>
+</html>
