@@ -21,6 +21,7 @@
 		<freemarker.version>2.3.20</freemarker.version>
 		<cxf.version>2.7.10</cxf.version>
 		<commons.logging.version>1.1</commons.logging.version>
+		<servlet.api.version>2.5</servlet.api.version>
 	</properties>
 
 	<build>
@@ -66,6 +67,12 @@
 	</repositories>
 
 	<dependencies>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>${servlet.api.version}</version>
+			<scope>provided</scope>
+		</dependency>
 		<dependency>
 			<groupId>ojdbc6</groupId>
 			<artifactId>ojdbc6</artifactId>

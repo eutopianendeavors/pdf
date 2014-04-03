@@ -19,6 +19,7 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
 http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd">
 
 	<context:component-scan base-package="edu.pdx.pdf" />
+	<import resource="classpath:sql-queries.xml" />
 
 	<bean id="propertyConfigurer"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -44,6 +45,13 @@ http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd">
 		</jaxrs:serviceBeans>
 	</jaxrs:server>
 
-	<bean id="pdfBean" class="edu.pdx.pdf.service.PdfService" />
+	<bean id="pdfBean" class="edu.pdx.pdf.service.PdfService">
+		<property name="dao" ref="dao" />
+	</bean>
+
+	<bean id="dao" class="edu.pdx.pdf.dao.PDFDao">
+		<property name="dataSource" ref="dataSource" />
+		<property name="queryUtil" ref="queryUtil" />
+	</bean>
 
 </beans>

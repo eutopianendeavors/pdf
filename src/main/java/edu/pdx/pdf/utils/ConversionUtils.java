@@ -29,15 +29,13 @@ public class ConversionUtils {
 		return cfg;
 	}
 
-	public static void convertFTLtoPDF(String ftlPath, Map<?, ?> model,
-			OutputStream output) throws IOException, TemplateException,
-			DocumentException {
+	public static void convertFTLtoPDF(String ftlPath, Map<?, ?> model, OutputStream output) throws IOException,
+			TemplateException, DocumentException {
 		Configuration cfg = ConversionUtils.getDefaultConfiguration();
 		Template template = cfg.getTemplate(ftlPath);
 		Writer writer = new StringWriter();
 		template.process(model, writer);
-
-		Document document = new Document(PageSize.LETTER);
+		Document document = new Document(PageSize.LETTER.rotate());
 		PdfWriter pdfWriter = PdfWriter.getInstance(document, output);
 		document.open();
 		document.addAuthor("pdx.edu");
@@ -47,8 +45,7 @@ public class ConversionUtils {
 
 		XMLWorkerHelper worker = XMLWorkerHelper.getInstance();
 
-		worker.parseXHtml(pdfWriter, document,
-				new StringReader(writer.toString()));
+		worker.parseXHtml(pdfWriter, document, new StringReader(writer.toString()));
 		document.close();
 
 	}
